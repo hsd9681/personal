@@ -19,38 +19,8 @@ public class Main {
       int num2 = sc.nextInt();
       sc.nextLine();
 
-      switch (operator) {
-        case "+":
-          result = num1 + num2;
-          System.out.println("결과: " + result);
-          resultList.add(result);
-          break;
-        case "-":
-          result = num1 - num2;
-          System.out.println("결과: " + result);
-          resultList.add(result);
-          break;
-        case "*":
-          result = num1 * num2;
-          System.out.println("결과: " + result);
-          resultList.add(result);
-          break;
-        case "/":
-          if (num2 != 0) {
-            result = num1 / num2;
-            System.out.println("결과: " + result);
-            resultList.add(result);
-          } else {
-            System.out.println("0으로 나눌 수 없습니다.");
-          }
-          break;
-        default:
-          System.out.println("잘못된 연산자입니다.");
-          break;
-
-
-
-      }
+      Calculator calculator  = new Calculator();
+      System.out.println(calculator.calulate(operator, num1, num2));
 
       System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
       text = sc.nextLine();
