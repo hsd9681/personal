@@ -3,12 +3,22 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+  private static final Calculator calculator = new Calculator(); // Calculator 객체 생성
+
+  // Calculator 클래스의 결과 리스트를 반환하는 게터 메서드
+  public static List<Integer> getResultList() {
+    return calculator.getResultList();
+  }
+
+  // Calculator 클래스의 결과 리스트를 설정하는 세터 메서드
+  public static void setResultList(List<Integer> resultList) {
+    calculator.setResultList(resultList);
+  }
+
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     String text = "";
     int result = 0;
-    List<Integer> resultList = new ArrayList<>();
-    Calculator calculator = new Calculator();
 
     while (!text.equals("exit")) {
       System.out.println("어떤 작업을 수행하시겠습니까?");
@@ -26,15 +36,14 @@ public class Main {
           System.out.print("두 번째 숫자를 입력하세요: ");
           int num2 = Integer.parseInt(sc.nextLine());
 
-          result = calculator.calulate(operator,num1, num2);
-          resultList = calculator.getResultList();
+          result = calculator.calulate(operator, num1, num2); // Calculator 객체의 메서드 호출
           System.out.println("결과: " + result);
           break;
 
         case 2:
           System.out.print("원의 반지름을 입력하세요: ");
           int radius = Integer.parseInt(sc.nextLine());
-          double area = calculator.calculateCircleArea(radius);
+          double area = calculator.calculateCircleArea(radius); // Calculator 객체의 메서드 호출
           System.out.println("원의 넓이: " + area);
           break;
 
@@ -46,14 +55,17 @@ public class Main {
       System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
       text = sc.nextLine();
 
-      switch (text){
+      switch (text) {
         case "remove":
           calculator.removeResult();
           break;
-        case "inquery" :
+        case "inquery":
           calculator.inquiryResults();
           break;
       }
     }
+
+    // 최종 결과 출력
+    System.out.println(getResultList().toString());
   }
 }
