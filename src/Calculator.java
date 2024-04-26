@@ -1,27 +1,33 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Calculator {
-  public double calulate(String operator, int num1, int num2){
+  private List<Integer> resultList = new ArrayList<>();
+
+  public void setResultList(List<Integer> resultList) {
+    this.resultList = resultList;
+  }
+
+  public List<Integer> getResultList() {
+    return resultList;
+  }
+
+
+  public int calulate(String operator, int num1, int num2) {
     int result = 0;
     switch (operator) {
       case "+":
         result = num1 + num2;
-        System.out.println("결과: " + result);
-        //resultList.add(result);
         break;
       case "-":
         result = num1 - num2;
-        System.out.println("결과: " + result);
-       // resultList.add(result);
         break;
       case "*":
         result = num1 * num2;
-        System.out.println("결과: " + result);
-       // resultList.add(result);
         break;
       case "/":
         if (num2 != 0) {
           result = num1 / num2;
-          System.out.println("결과: " + result);
-          //resultList.add(result);
         } else {
           System.out.println("0으로 나눌 수 없습니다.");
         }
@@ -30,6 +36,15 @@ public class Calculator {
         System.out.println("잘못된 연산자입니다.");
         break;
     }
+    resultList.add(result);
     return result;
   }
+ /* public void removeResult() {
+    if (!resultList.isEmpty()) {
+      int removedResult = resultList.remove(0);
+      System.out.println("가장 먼저 저장된 결과 " + removedResult + "가 삭제되었습니다.");
+    } else {
+      System.out.println("저장된 결과가 없습니다.");
+    }
+  }*/
 }
