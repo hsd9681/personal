@@ -27,7 +27,7 @@ public class Main {
 
       switch (text){
         case "remove":
-         // calculator.removeResult();
+          calculator.removeResult();
         case "inquery" :
             System.out.println(resultList.toString());
       }

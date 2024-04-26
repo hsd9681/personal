@@ -39,12 +39,12 @@ public class Calculator {
     resultList.add(result);
     return result;
   }
- /* public void removeResult() {
+  public void removeResult() {
     if (!resultList.isEmpty()) {
       int removedResult = resultList.remove(0);
       System.out.println("가장 먼저 저장된 결과 " + removedResult + "가 삭제되었습니다.");
     } else {
       System.out.println("저장된 결과가 없습니다.");
     }
-  }*/
+  }
 }
