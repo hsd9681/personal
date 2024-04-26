@@ -9,6 +9,7 @@ public class Main {
     int result = 0;
     List<Integer> resultList = new ArrayList<>();
 
+
     while (!text.equals("exit")) {
       System.out.print("첫 번째 숫자를 입력하세요: ");
       int num1 = sc.nextInt();

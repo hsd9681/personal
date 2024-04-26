@@ -12,6 +12,11 @@ public class Calculator {
     return resultList;
   }
 
+  // 생성자를 통해 resultList 초기화? 이게 맞나?
+  public Calculator() {
+    resultList = new ArrayList<>();
+  }
+
 
   public int calulate(String operator, int num1, int num2) {
     int result = 0;
