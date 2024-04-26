@@ -55,4 +55,8 @@ public class Calculator {
   public void inquiryResults() {
     System.out.println(resultList.toString());
   }
+  public double calculateCircleArea(int radius) {
+    final double PI = 3.14159265359; // 원주율을 상수로 선언
+    return PI * radius * radius;
+  }
 }
