@@ -44,6 +44,18 @@ public class Main {
             System.out.println("0으로 나눌 수 없습니다.");
           }
           break;
+        default:
+          System.out.println("잘못된 연산자입니다.");
+          break;
+
+
+
+      }
+
+      System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
+      text = sc.nextLine();
+
+      switch (text){
         case "remove":
           if (!resultList.isEmpty()) {
             int removedResult = resultList.remove(0);
@@ -52,13 +64,10 @@ public class Main {
             System.out.println("저장된 결과가 없습니다.");
           }
           break;
-        default:
-          System.out.println("잘못된 연산자입니다.");
-          break;
-      }
 
-      System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
-      text = sc.nextLine();
+        case "inquery" :
+            System.out.println(resultList.toString());
+      }
     }
 
     System.out.println("프로그램을 종료합니다.");
