@@ -1,62 +1,28 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Calculator {
-  private List<Integer> resultList = new ArrayList<>();
+public abstract class Calculator {
+  protected List<Double> resultList = new ArrayList<>(); // 결과를 저장하는 리스트
 
-  public void setResultList(List<Integer> resultList) {
-    this.resultList = resultList;
-  }
-
-  public List<Integer> getResultList() {
+  public List<Double> getResultList() {
     return resultList;
   }
 
-  // 생성자를 통해 resultList 초기화? 이게 맞나?
-  public Calculator() {
-    resultList = new ArrayList<>();
-  }
+  // 사칙연산을 수행하는 메서드
+  public abstract double calculate(String operator, double num1, double num2);
 
-
-  public int calulate(String operator, int num1, int num2) {
-    int result = 0;
-    switch (operator) {
-      case "+":
-        result = num1 + num2;
-        break;
-      case "-":
-        result = num1 - num2;
-        break;
-      case "*":
-        result = num1 * num2;
-        break;
-      case "/":
-        if (num2 != 0) {
-          result = num1 / num2;
-        } else {
-          System.out.println("0으로 나눌 수 없습니다.");
-        }
-        break;
-      default:
-        System.out.println("잘못된 연산자입니다.");
-        break;
-    }
-    resultList.add(result);
-    return result;
-  }
+  // 결과를 제거하는 메서드
   public void removeResult() {
     if (!resultList.isEmpty()) {
-      int removedResult = resultList.remove(0);
+      double removedResult = resultList.remove(0);
       System.out.println("가장 먼저 저장된 결과 " + removedResult + "가 삭제되었습니다.");
     } else {
       System.out.println("저장된 결과가 없습니다.");
     }
   }
+
+  // 결과를 조회하는 메서드
   public void inquiryResults() {
     System.out.println(resultList.toString());
-  }
-  public double calculateCircleArea(int radius) {
-    final double PI = 3.14159265359; // 원주율을 상수로 선언
-    return PI * radius * radius;
   }
 }
