@@ -15,6 +15,8 @@ public class Main {
       int choice = scanner.nextInt();
       scanner.nextLine(); // 개행문자 제거
 
+
+
       switch (choice) {
         case 1:
           System.out.print("첫 번째 숫자를 입력하세요: ");
