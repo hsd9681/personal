@@ -47,4 +47,7 @@ public class Calculator {
       System.out.println("저장된 결과가 없습니다.");
     }
   }
+  public void inquiryResults() {
+    System.out.println(resultList.toString());
+  }
 }

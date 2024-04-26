@@ -22,6 +22,7 @@ public class Main {
       Calculator calculator  = new Calculator();
       result = calculator.calulate(operator, num1, num2);
       resultList = calculator.getResultList();
+
       System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
       text = sc.nextLine();
 
@@ -29,10 +30,10 @@ public class Main {
         case "remove":
           calculator.removeResult();
         case "inquery" :
-            System.out.println(resultList.toString());
+            calculator.inquiryResults();
       }
     }
 
-    System.out.println("프로그램을 종료합니다.");
+    System.out.println(resultList.toString());
   }
 }
