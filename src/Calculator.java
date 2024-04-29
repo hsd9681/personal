@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Calculator {
+
   protected List<Double> resultList = new ArrayList<>(); // 결과를 저장하는 리스트
 
   public List<Double> getResultList() {

@@ -4,7 +4,13 @@ public class Main {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     double radius = 0;
-    ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator();
+    AddOperator addOperation = new AddOperator();
+    SubtractOperator subtractOperation = new SubtractOperator();
+    MultiplyOperator multiplyOperation = new MultiplyOperator();
+    DivideOperator divideOperation = new DivideOperator();
+
+    // ArithmeticCalculator 객체 생성 시 연산자 객체들을 전달
+    ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(addOperation, subtractOperation, multiplyOperation, divideOperation);
     CircleCalculator circleCalculator = new CircleCalculator();
 
     while (true) {
