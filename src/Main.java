@@ -8,9 +8,10 @@ public class Main {
     SubtractOperator subtractOperation = new SubtractOperator();
     MultiplyOperator multiplyOperation = new MultiplyOperator();
     DivideOperator divideOperation = new DivideOperator();
+    ModOperator modOperation = new ModOperator();
 
     // ArithmeticCalculator 객체 생성 시 연산자 객체들을 전달
-    ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(addOperation, subtractOperation, multiplyOperation, divideOperation);
+    ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(addOperation, subtractOperation, multiplyOperation, divideOperation, modOperation);
     CircleCalculator circleCalculator = new CircleCalculator();
 
     while (true) {

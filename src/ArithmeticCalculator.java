@@ -4,13 +4,15 @@ public class ArithmeticCalculator extends Calculator {
   private final SubtractOperator substractOperation;
   private final MultiplyOperator multiplyOperation;
   private final DivideOperator divideOperation;
+  private final ModOperator modOperation;
 
   public ArithmeticCalculator(AddOperator addOperation, SubtractOperator substractOperation,
-                    MultiplyOperator multiplyOperation, DivideOperator divideOperation) {
+                    MultiplyOperator multiplyOperation, DivideOperator divideOperation, ModOperator modOperation) {
     this.addOperation = addOperation;
     this.substractOperation = substractOperation;
     this.multiplyOperation = multiplyOperation;
     this.divideOperation = divideOperation;
+    this.modOperation = modOperation;
   }
 
 
@@ -33,6 +35,9 @@ public class ArithmeticCalculator extends Calculator {
         } else {
           System.out.println("0으로 나눌 수 없습니다.");
         }
+        break;
+      case "%":
+        result = modOperation.operate(num1,num2);
         break;
       default:
         System.out.println("잘못된 연산자입니다.");
